@@ -20,14 +20,11 @@ const Post: React.FC<IPostProps> = ({ item }) => {
             variant="secondary"
             className="bi bi-trash"
             onClick={() => {
-              dispatch(() => {
-                if (item.id !== undefined) {
-                  deletePost(item.id);
-                }
-              });
+              if (item.id !== undefined) {
+                dispatch(deletePost(item.id));
+              }
             }}
           >
-            {" "}
             Delete
           </Button>
         </div>
